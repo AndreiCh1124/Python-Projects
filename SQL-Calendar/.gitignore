@@ -130,3 +130,4 @@ dmypy.json
 todos.txt
 token.json
 credentials.json
+*.txt

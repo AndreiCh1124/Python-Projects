@@ -7,7 +7,7 @@ from sqlalchemy.orm.session import Session
 from sqlalchemy.sql.elements import or_
 
 
-DATABASE_URI = 'postgresql+psycopg2://postgres:dbproiectel@localhost:5432/foo'
+DATABASE_URI = ''
 engine = create_engine(DATABASE_URI)
 
 Base = declarative_base()

@@ -10,7 +10,7 @@ from utils import string_hasher, validate_phone_nr, validate_email, \
     send_email_verification, send_delete_email, send_password_change_email, \
     colored_print
 
-DATABASE_URI = 'postgresql+psycopg2://rcqwafsp:JIPwpnNgun_h_fNnCKRJ7GBLiG5lH0MQ@hattie.db.elephantsql.com/rcqwafsp'
+DATABASE_URI = ''
 engine = create_engine(DATABASE_URI)
 
 Base = declarative_base()
