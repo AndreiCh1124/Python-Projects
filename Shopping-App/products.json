@@ -1,0 +1,52 @@
+{
+  "beer": {
+    "price": 9,
+    "origin": "Germany",
+    "stock": 50
+  },
+  "bread": {
+    "price": 3,
+    "origin": "Romania",
+    "stock": 27
+  },
+  "apples": {
+    "price": 4,
+    "origin": "France",
+    "stock": 35
+  },
+  "cigars": {
+    "price": 18,
+    "origin": "England",
+    "stock": 10
+  },
+  "bananas": {
+    "price": 4,
+    "origin": "India",
+    "stock": 43
+  },
+  "milk": {
+    "price": 4,
+    "origin": "Romania",
+    "stock": 57
+  },
+  "honey": {
+    "price": 20,
+    "origin": "Hungary",
+    "stock": 9
+  },
+  "wine": {
+    "price": 35,
+    "origin": "Portugal",
+    "stock": 12
+  },
+  "potatoes": {
+    "price": 5,
+    "origin": "Romania",
+    "stock": 70
+  },
+  "superglue": {
+    "price": 6,
+    "origin": "USA",
+    "stock": 19
+  }
+}

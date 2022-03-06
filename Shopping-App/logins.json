@@ -1,0 +1,30 @@
+{
+    "john_lee": {
+        "name": "John Lee",
+        "age": 28,
+        "email": "john.lee11@gmail.com",
+        "phone": "0723 634 123",
+        "password": "9c524a49253caf578babf7b9bf984937991ea33e3dd295f4639bc14d1e60316223fdfbd19f897fcd470b7f5eb7c25ff5c03022b0499c850e18cba81b61292999"
+    },
+    "marius_ch": {
+        "name": "Marius Popescu",
+        "age": 50,
+        "email": "marius.@gmial.re",
+        "phone": "0758 132 123",
+        "password": "2351edb7fdefcc0327af34061b2084cf5ad91622d16f824454e25b2b490778accbda2139c88508ac173efc2d51be63f213534fc29000f55d488e84fcf793eb31"
+    },
+    "andrei_ch": {
+        "name": "Andrei Ch",
+        "age": 19,
+        "email": "andrei.ch@gmail.com",
+        "phone": "0732 123 435",
+        "password": "315c79f6919b217c973d135d3e80b3eaf9a6d023fa169de63374e9e3932f2e0ebd46fe81ed587ba5b33392df0cc4dff5d82187543bda3bbaea8bd87d7af33836"
+    },
+    "username": {
+        "name": "andrei ch",
+        "age": 99,
+        "email": "andrei.11@gmail-ch.com",
+        "phone": "0721 123 124",
+        "password": "94e89bd380edb3493e982813bf943696c49b68021410d7ac0ac0b5ebc8fb3e033a063e94760afe76ed933c17e2e00287a781c7887115ef927634bfd412299b2c"
+    }
+}

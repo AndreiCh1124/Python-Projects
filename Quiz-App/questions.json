@@ -1,0 +1,36 @@
+[
+    {
+        "question": "Who is Batman?",
+        "correct_answer": "Bruce Wayne",
+        "incorrect_answers": ["Clark Kent", "Barry Allen", "Tony Stark"]
+    },
+    {
+        "question": "When was the Rubik Cube invented?",
+        "correct_answer": "1974",
+        "incorrect_answers": ["1985", "1999", "1970"]
+    },
+    {
+        "question": "When was Winston Churchill born?",
+        "correct_answer": "1874",
+        "incorrect_answers": ["1850", "1900", "1890"]
+    },
+    {
+        "question": "What is the capital of Zimbabwe?",
+        "correct_answer": "Harare",
+        "incorrect_answers": ["Niamey", "Abuja", "Alger"]
+    },
+    {
+        "question": "Which is the most spoken language worldwide?",
+        "correct_answer": "Chinese",
+        "incorrect_answers": ["English", "Spanish", "Hindi"]
+    },
+    {
+        "question": "What was the Game of the Year award winner in 2019?",
+        "correct_answer": "Sekiro: Shadows Die Twice",
+        "incorrect_answers": [
+            "The Withcer III",
+            "League of Legends",
+            "God of War"
+        ]
+    }
+]

@@ -1,0 +1,3 @@
+2021-09-07 18:17:06,767 - utils.py - DEBUG - validate_name - Function was called using "andrei" as argument
+2021-09-07 19:29:19,784 - utils.py - DEBUG - validate_phone - Function "phone_number_checker" was called using "0723 745 11111" as argument
+2021-09-07 19:31:14,015 - utils.py - DEBUG - validate_phone - Function "phone_number_checker" was called using "a 0723 745 111" as argument
