@@ -5,6 +5,8 @@ import matplotlib.animation as animation
 
 import tkinter
 
+
+
 text_label = """
 General form of the ecuation: A * sin ( ω * θ + φ )
 Remember to type space after each item of the formula
@@ -14,26 +16,50 @@ Remember to type space after each item of the formula
 line_animator = list()
 lines = list()
 
-def btn_command(root, entry):
-    print("ceva")
+def get_parameters(list_1):
+    a = list()
+    omega = list()
+    theta = list() 
+    phi = list()
+    for element in list_1:
+        element = element.split(" ")
+        a.append(float(element[0]))
+        omega.append(float(element[4]))
+        theta.append(float(element[6]))
+        phi.append(float(element[8]))
+    return a, omega, theta, phi
+
+def btn_command():
     global received_nr_of_osc
-    received_nr_of_osc = entry.get()
-    
+    received_nr_of_osc = entry_ext.get()
+    root.withdraw()
+    root.quit()
+    root.destroy()
 
 def det_number_of_osc():
+    global root
     root = tkinter.Tk()
+    root.title("Oscillation Viewer")
     root.resizable()
     root.geometry("650x250")
+    global entry_ext
     entry_ext = tkinter.Entry(root, width=50, font=("Helvetica", 20))
     entry_ext.pack(padx=10, pady=10)
     entry_ext.insert(0, "")
-    button = tkinter.Button(root, text="Submit", command=btn_command(root, entry_ext))
+    label_1 = tkinter.Label(root, text="Please enter the number of oscillations", font=("Helvetica", 15))
+    label_1.pack()
+    button = tkinter.Button(root, text="Submit", command=btn_command)
     button.pack()
     root.mainloop()
-    print(received_nr_of_osc)
+    return received_nr_of_osc
+
+def button_func():
+    global ecuations
+    ecuations = list()
+    for entry in entries:
+        ecuations.append(entry.get())
     root.quit()
     root.withdraw()
-    return entry_ext.get()
 
 class Line():
     
@@ -46,14 +72,14 @@ class Line():
         
     def draw_graph(self, amps):
         global fig
-        fig = plt.figure()
+        fig = plt.figure("Oscillation Viewer")
         max_a = max(amps)
         ax = plt.axes(xlim=(0, 100), ylim=(max_a * -2, max_a * 2))
         
     
     def animate(self, t, line, a, om, th, ph, decay=0):
         t = np.arange(0, t, 0.1)
-        y = a * (1/(t ** decay)) * np.sin(om * t + th) + ph
+        y = a * (1/(t ** decay)) * np.sin(om * t + th + ph)
         line[0].set_data(t, y)
         return line[0]
     
@@ -70,35 +96,45 @@ class Window():
         self.number_of_ec = number_of_ec  
         
     def draw_entries(self):
+        global root
         root = tkinter.Tk()
+        root.title("Oscillation Viewer")
         root.resizable()
-        root.geometry("650x250")
+        root.geometry("650x400")
+        global entries
         entries = list()
         for idx in range(int(self.number_of_ec)):
             entries.append(tkinter.Entry(root, width=50, font=("Helvetica", 20)))
             entries[idx].pack(padx=10, pady=10)
             entries[idx].insert(idx, "")
-            print(idx)
+        label_1 = tkinter.Label(root, text="Please type an ecuation in each of the text boxes" + text_label, font=("Helvetica", 15))
+        label_1.pack()
+        button1 = tkinter.Button(root, text="Generate visuals", command=button_func)
+        button1.pack()
+        
         root.mainloop()
-            
+        
+nr_of_osc = det_number_of_osc()
 
-line = Line(10, 0.3, 2, 1)
-line2 = Line(12, 0.5, 1, 2)
-line3 = Line(7, 0.5, 1, 2)
-line4 = Line(20, 0.5, 1, 2)
+window = Window(nr_of_osc)
+window.draw_entries()
 
-line.draw_graph([7, 10, 12, 20])
-line.show_osc()
-line2.show_osc()
-line3.show_osc()
-line4.show_osc()
+line_list = list()
+
+a, om, th, ph = get_parameters(ecuations)
+
+for idx in range(int(nr_of_osc)):
+    line = Line(a[idx], om[idx], th[idx], ph[idx])
+    line_list.append(line)
+
+line_list[0].draw_graph(a)
+    
+for line in line_list:
+    line.show_osc()
 
 plt.grid()
 plt.show()
 
-
-
-# 10 * sin ( 0.5 * 2 + 1 )
-
-# plt.grid()
-# plt.show() 
+# 11 * sin ( 0.1 * 1 + 1 )
+# 12 * sin ( 0.2 * 2 + 2 )
+# 13 * sin ( 0.3 * 3 + 3 )
